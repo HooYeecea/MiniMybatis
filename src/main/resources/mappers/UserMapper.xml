@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.minimybatis.demo.UserMapper">
+
+    <select id="findById" resultType="com.minimybatis.demo.User">
+        SELECT id, name, age FROM users WHERE id = #{id}
+    </select>
+
+    <select id="findAll" resultType="com.minimybatis.demo.User">
+        SELECT id, name, age FROM users ORDER BY id
+    </select>
+
+    <insert id="insert">
+        INSERT INTO users(id, name, age) VALUES(#{id}, #{name}, #{age})
+    </insert>
+
+    <update id="update">
+        UPDATE users SET name = #{name}, age = #{age} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+
+</mapper>
